@@ -5,15 +5,17 @@
     --color-mshadow:hsl(233, 100%, 62%);
     --color-p: hsl(201, 11%, 66%);
     --color-h: hsl(210, 10%, 33%);
-    --color-f: hsl(201, 11%, 76%);
+    --color-f: hsl(203, 29%, 95%);
     --border-ch:3px solid hotpink;
 }
 
 body{
     font-family: 'Bai Jamjuree', sans-serif;
     box-sizing: border-box;
+    background-image: url(/images/bg-header-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100% 10%;
 }
-
 p{
     color: var(--color-p);
     text-align: center;
@@ -42,27 +44,22 @@ h4{
     flex-flow: column wrap;
     align-content: center;
 }
+
 .justify-text{
     display: flex;
     flex-flow: column wrap;
     align-content: center;
     text-align: center;
-    border: var(--border-ch);
-    /* flex-flow: column wrap;
-    align-content: center;
-    text-align: center; */
     margin: 3rem 0;
 }
  .justify-text p{
     display: flex;
-    
+    align-self: center;
     color: var(--color-p);
-    border: var(--border-ch);
     text-align: center;
     position: relative;
     top: -30px;
     line-height: 25px;
-    /* max-width: 65%;  */
  }
 
 .buttons{
@@ -73,6 +70,7 @@ h4{
     align-self: center;
     position: relative;
     top: -15px;
+    cursor: pointer;
 }
 .buttons *{
     color: white;
@@ -100,21 +98,16 @@ h4{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* align-content: center; */
     align-items: center;
-    border: var(--border-ch);
-    /* justify-items: center; */
 }
 .img-device{
-    max-width: 89%;
-    /* flex-shrink: 1; */
-    
+    max-width: 89%;  
 }
 .top-text{
-    padding: 2rem 0 1rem 3rem;
+    padding: 2rem 0 1rem 0;
     display: flex;
     flex-flow: column wrap;
-    border: var(--border-ch);
+    align-content: center;
 }
 .top-text p{
     max-width: 65%;
@@ -135,7 +128,6 @@ h4{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: baseline;
 }
 .icon{
     width: 44px;
@@ -146,7 +138,6 @@ h4{
     align-items: center;
     margin-bottom: 1rem;
 }
-
 .sponsors{
     display: flex;
     flex-flow: row wrap;
@@ -162,37 +153,94 @@ h4{
     align-content: center;
 }
 
-.footer{
+footer{
     background-color: var(--color-f);
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-
+    flex-flow: column wrap; 
 }
-
-.footer .img-logo{
+.img-logo-b{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.img-logo-b img{
     width: 44px;
+    margin-top: 2rem;
 }
 .more-info{
-    border: var(--border-ch);
-    width: 50%;
+    display: flex;
+    flex-flow: column wrap;        
+    padding: 1rem 0;
 }
 .more-info ul{
-    border: var(--border-ch);
+    padding: 0;
+    margin: 0;
     display:flex;
-    flex-flow: column wrap;
-    align-items: center;
- 
-
-
+    flex-flow: column wrap; 
+    justify-content: space-around;
+    align-items: center; 
 }
-
-
-ul{
+li{
     list-style-type: none;
+    color: var(--color-h);
+    line-height: 2.5rem;
+}
+a{
+    text-decoration: none;
+    color:var(--color-p);
+}
+li:hover{
+    color: var(--color-ios);
+}
+.contact-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.c-icon{
+    padding: 1rem 1.3rem;
+}
+.c-icon:hover{
+    fill: hsl(171, 66%, 44%);;
 }
 
-/* @media {}
-.top-text{
-    align-self: flex-start;
-} */
+@media screen and (min-width: 1440px){
+    body{
+    background-image: url(/images/bg-header-desktop.png);
+    }
+}
+
+@media screen and (min-width: 600px){
+    footer{
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    .img-logo-b{
+       margin-right:3rem;
+    }
+    .img-logo-b img{
+        margin-top: 0;
+    }
+    .more-info{
+        width: 60%;
+        flex-flow: row wrap;
+        justify-content:flex-start;
+        padding-left: 4rem;
+    }
+    .more-info ul{
+        margin-right: 4rem;
+        align-items: flex-start;
+        justify-content: flex-start; 
+    }
+}
+
+@media screen and (min-width: 1401px){
+    .top-info{
+        position: relative;
+        right: 3.8rem;
+    }
+    .top-text *{
+      align-self: flex-start;
+      text-align: left;
+    }
+}
